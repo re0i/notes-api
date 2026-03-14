@@ -2,15 +2,25 @@
   "name": "notes-api",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "npm run dev --prefix client",
+    "server": "node server/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re0i/notes-api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
-    "express": "^5.2.1"
+  "bugs": {
+    "url": "https://github.com/re0i/notes-api/issues"
+  },
+  "homepage": "https://github.com/re0i/notes-api#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }
