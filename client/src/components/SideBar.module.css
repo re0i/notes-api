@@ -1,0 +1,280 @@
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background-color: var(--bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 8px;
+  font-family: 'DM Sans', sans-serif;
+  box-sizing: border-box;
+
+  --bg: #f7f6f3;
+  --border: #e8e6e0;
+  --text: #2c2b27;
+  --text-muted: #888780;
+  --accent: #5c5bd4;
+  --accent-bg: #ededfc;
+  --hover-bg: #eeecea;
+  --avatar-bg: #5c5bd4;
+  --avatar-text: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    --bg: #1c1b18;
+    --border: #2e2d29;
+    --text: #e8e6df;
+    --text-muted: #6b6963;
+    --accent: #8180e8;
+    --accent-bg: #26253d;
+    --hover-bg: #252420;
+    --avatar-bg: #8180e8;
+    --avatar-text: #fff;
+  }
+}
+
+/* Space header */
+.spaceHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px 10px;
+  margin-bottom: 4px;
+}
+
+.spaceAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background-color: var(--avatar-bg);
+  color: var(--avatar-text);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.spaceName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Nav list */
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.navItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: none;
+  background: none;
+  border-radius: 7px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s, color 0.12s;
+  font-family: inherit;
+}
+
+.navItem:hover {
+  background-color: var(--hover-bg);
+  color: var(--text);
+}
+
+.navItemActive {
+  background-color: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.navItemActive:hover {
+  background-color: var(--accent-bg);
+  color: var(--accent);
+}
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+.navItemActive .navIcon {
+  opacity: 1;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background-color: var(--border);
+  margin: 6px 4px;
+}
+
+/* Collapsible sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.sectionHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.sectionHeader {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: none;
+  background: none;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s, color 0.12s;
+  font-family: inherit;
+}
+
+.sectionHeader:hover {
+  background-color: var(--hover-bg);
+  color: var(--text);
+}
+
+.sectionLabel {
+  flex: 1;
+}
+
+.chevron {
+  transition: transform 0.18s ease;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(0deg);
+}
+
+.chevron:not(.chevronOpen) {
+  transform: rotate(-90deg);
+}
+
+.addBtn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  flex-shrink: 0;
+}
+
+.addBtn:hover {
+  background-color: var(--hover-bg);
+  color: var(--text);
+}
+
+/* Starred / sub-items */
+.subList {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.subItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s, color 0.12s;
+  font-family: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subItem:hover {
+  background-color: var(--hover-bg);
+  color: var(--text);
+}
+
+.subIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* Folder files — indented one more level */
+.fileList {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.fileItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s, color 0.12s;
+  font-family: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fileItem:hover {
+  background-color: var(--hover-bg);
+  color: var(--text);
+}
